@@ -9,7 +9,7 @@ import Config
 
 config :phoenix_tutorial,
   ecto_repos: [PhoenixTutorial.Repo],
-  generators: [timestamp_type: :utc_datetime, binary_id: true]
+  generators: [timestamp_type: :utc_datetime_usec, binary_id: true]
 
 # Configures the endpoint
 config :phoenix_tutorial, PhoenixTutorialWeb.Endpoint,
@@ -33,7 +33,7 @@ config :phoenix_tutorial, PhoenixTutorial.Mailer, adapter: Swoosh.Adapters.Local
 
 # Configure esbuild (the version is required)
 config :esbuild,
-  version: "0.17.11",
+  version: "0.25.5",
   phoenix_tutorial: [
     args:
       ~w(js/app.js --bundle --target=es2022 --outdir=../priv/static/assets/js --external:/fonts/* --external:/images/*),
@@ -43,7 +43,7 @@ config :esbuild,
 
 # Configure tailwind (the version is required)
 config :tailwind,
-  version: "4.0.9",
+  version: "4.1.8",
   phoenix_tutorial: [
     args: ~w(
       --input=assets/css/app.css

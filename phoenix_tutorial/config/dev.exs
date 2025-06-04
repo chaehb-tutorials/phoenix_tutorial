@@ -5,7 +5,7 @@ config :phoenix_tutorial, PhoenixTutorial.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "phoenix_tutorial_dev",
+  database: "phoenix_tutorial",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
