@@ -18,6 +18,20 @@ defmodule PhoenixTutorialWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/new_views", NewViewsController, :index_page
+    get "/new_views/:page", NewViewsController, :pages
+
+    live "/posts", PostLive.Index, :index
+    live "/posts/new", PostLive.Form, :new
+    live "/posts/:id", PostLive.Show, :show
+    live "/posts/:id/edit", PostLive.Form, :edit
+
+    live_session :new_live, root_layout: {PhoenixTutorialWeb.Layouts, :new_live} do
+      live "/new_live", NewLiveView
+      live "/new_lives", NewLive.Index
+      live "/new_lives/v2", NewLive.Index2
+    end
+
   end
 
   # Other scopes may use custom stacks.

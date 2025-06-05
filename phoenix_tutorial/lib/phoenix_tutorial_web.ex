@@ -50,7 +50,7 @@ defmodule PhoenixTutorialWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView
+      use Phoenix.LiveView , layout: {PhoenixTutorialWeb.Layouts, :new_live}
 
       unquote(html_helpers())
     end

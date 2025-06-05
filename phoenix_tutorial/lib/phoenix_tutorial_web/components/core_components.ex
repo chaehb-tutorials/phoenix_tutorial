@@ -93,9 +93,10 @@ defmodule PhoenixTutorialWeb.CoreComponents do
   slot :inner_block, required: true
 
   def button(%{rest: rest} = assigns) do
-    variants = %{"primary" => "btn-primary", nil => "btn-primary btn-soft"}
-    assigns = assign(assigns, :class, Map.fetch!(variants, assigns[:variant]))
+    # variants = %{"primary" => "btn-primary","warning" => "btn-warning","success" => "btn-success","error"=>"btn-error", nil => "btn-primary btn-soft"}
+    # assigns = assign(assigns, :class, Map.fetch!(variants, assigns[:variant]))
 
+    assigns = assign(assigns, :class, assigns[:variant])
     if rest[:href] || rest[:navigate] || rest[:patch] do
       ~H"""
       <.link class={["btn", @class]} {@rest}>
