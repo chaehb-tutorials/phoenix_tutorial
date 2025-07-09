@@ -1,3 +1,0 @@
-# PhoenixTutorial
-
-## Tutorial Phoenix Project
